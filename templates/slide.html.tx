@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>Coconut</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Coconut WebSocket slideshow system">
+    <meta name="author" content="Nishibayashi Takuji">
+
+    <link href="/jqm/jquery.mobile-1.0.1.css" rel="stylesheet">
+
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/img/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/img/apple-touch-icon-114x114.png">
+  </head>
+
+  <body>
+
+    <div data-role="page" id="page0">
+        <h1><: $meta.title :></h1>
+        <h2><: $meta.author :></h2>
+    </div>
+    :for $slides -> $slide {
+    <div data-role="page" id="page<: $~slide.index :>">
+        <: $slide | mark_raw :>
+    </div>
+    :}
+
+    <script src="/js/jquery-1.7.1.min.js"></script>
+    <script src="/jqm/jquery.mobile-1.0.1.js"></script>
+    <script type="text/javascript">
+        
+    </script>
+  </body>
+</html>
